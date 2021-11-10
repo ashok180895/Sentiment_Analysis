@@ -83,9 +83,8 @@ def fit_model(Xtr, Ytr, C):
     Returns:
         LogisticRegression: The trained logistic regression model.
     """
-    # TODO: convert each of the training documents into a vector
+    
     XtrVector = document_to_vector(Xtr)
-    # TODO: train the logistic regression classifier
     log_reg = LogisticRegression(C=C,max_iter=100)
     model = log_reg.fit(XtrVector, Ytr)
     return model
@@ -106,15 +105,15 @@ def test_model(model, Xtst, Ytst):
     Returns:
         float: The accuracy of the model on the data.
     """
-    # TODO: convert each of the testing documents into a vector
+    
     XtstVector = document_to_vector(Xtst)
 
-    # TODO: test the logistic regression classifier and calculate the accuracy
+    
     score = model.score(XtstVector, Ytst)
     return score
 
 
-# TODO: search for the best C parameter using the validation set
+
 #finding the best c values with max accuracy on the validation set
 cValues = [0.1,4,8,16,25,32]
 scores=[]
@@ -126,7 +125,7 @@ print(scores,cValues)
 cBest_idx=scores.index(max(scores))
 cBest=cValues[cBest_idx]
 print("The best c Parameter is ::",cBest)
-# TODO: fit the model to the concatenated training and validation set
+
 #   test on the test set and print the result
 
 # computing on combined train and Val sets , Testing on test sets
